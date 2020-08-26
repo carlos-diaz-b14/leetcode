@@ -1,0 +1,21 @@
+class Solution {
+    func diameterOfBinaryTree(_ root: TreeNode?) -> Int {
+        var res = 0
+    var depth = 0
+    
+    func getDepth(root : TreeNode?) -> Int {
+        if root == nil { return 0 }
+        
+        let left = getDepth(root: root?.left)
+        let right = getDepth(root: root?.right)
+        
+        depth = max(depth, left + right)
+        
+        return max(left , right) + 1
+    }
+    
+    getDepth(root: root)
+    return depth
+        
+    }
+}
